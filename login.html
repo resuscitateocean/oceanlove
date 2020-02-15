@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>Galaxy——聚焦当下</title>
+		<link rel="stylesheet" type="text/css" href="css/login.css">
+		<script src="js/jquery-1.11.0.min.js"></script>
+		<script type="text/javascript">
+			
+			// 背景图切换
+
+			$(function() {
+
+				/*var img = $("<img src='img/G0.jpg' />")
+				$("body").append(img);
+				var i = 0;
+				var h = document.body.parentElement.clientHeight;
+
+				setInterval(function() {
+					img.fadeOut(2800, function() {
+						img.remove();
+
+						img = $("<img src='img/G" + (i++ % 4) + ".jpg' />");
+
+						img.css({
+							"width": "100%",
+							"height": h + "px",
+							"position": "absolute",
+							"z-index": "1",
+							"overflow": "hidden"
+						});
+
+						img.fadeIn(2800);
+						$("body").append(img);
+					});
+
+				}, 10000)*/
+
+				
+				var pwd = document.getElementsByClassName("i")[1];
+				var lh = document.getElementById("l_hand");
+				var rh = document.getElementById("r_hand");
+				var lh2 = document.getElementById("l_hand2");
+				var rh2 = document.getElementById("r_hand2");
+
+				lh.style.left = "133px";
+				lh.style.top = "-12px";
+
+				rh.style.right = "-112px";
+				rh.style.top = "-12px";
+
+				pwd.onfocus = function() {
+					var timer = setInterval(function() {
+						var top1 = parseFloat(l_hand.style.top);
+						var left = parseFloat(l_hand.style.left);
+
+						var top2 = parseFloat(rh.style.top);
+						var right = parseFloat(rh.style.right);
+
+						left++;
+						top1--;
+
+						right++;
+						top2--;
+
+						if(left == 160) {
+							clearInterval(timer);
+							lh.style.display = "none";
+							rh.style.display = "none";
+
+							lh2.style.display = "block";
+							rh2.style.display = "block";
+
+							return false;
+						}
+
+						lh.style.top = top1 + "px";
+						lh.style.left = left + "px";
+
+						rh.style.top = top2 + "px";
+						rh.style.right = right + "px"
+
+					}, 15)
+				}
+
+				pwd.onblur = function() {
+
+					lh2.style.display = "none";
+					rh2.style.display = "none";
+
+					lh.style.display = "block";
+					rh.style.display = "block";
+
+					lh.style.left = "133px";
+					lh.style.top = "-12px";
+					rh.style.right = "-112px";
+					rh.style.top = "-12px";
+				}
+
+
+				$("#btn").click(function(){
+				
+				var name=$("#name").val();
+				var password=$("#pwd").val();
+				if(name=="caliente" && password=="20191007"){
+					alert("通过！");
+					setTimeout(function(){
+						window.location="index.html";
+					},2000);
+					
+				}else{
+					alert("不对！");
+				}
+			})
+
+
+			})
+			
+		
+		</script>
+	</head>
+
+	<body>
+		
+
+		<div id="owl">
+			<div class="d2">
+				<div class="tou"></div>
+				<div id="l_hand"></div>
+				<div id="r_hand"></div>
+				<div id="l_hand2"></div>
+				<div id="r_hand2"></div>
+			</div>
+			<form>
+				<p>
+					<input type="text" placeholder="你的英文名" class="i" id="name">
+				</p>
+				<p>
+					<input type="password" placeholder="我们相遇的日期（如20080514）" class="i" id="pwd"> 
+				</p>
+
+				<p>
+					<input type="button" value="登录" id="btn">
+				</p>
+			</form>
+
+		</div>
+
+		
+	</body>
+
+</html>

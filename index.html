@@ -1,0 +1,110 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title>Our Love Story</title>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<style type="text/css">
+		@font-face {
+			font-family: digit;
+			src: url('钟齐安景臣硬笔行书.ttf') format("truetype");
+		}
+	
+	</style>
+	<link href="css/default.css" type="text/css" rel="stylesheet">
+	<link type="text/css" rel="stylesheet" href="css/default_dev.css" />
+	
+  
+	
+</head>
+
+<body>
+	<div id="mainDiv">
+		<div id="content">
+			<div id="code">
+				
+				<span class="space"/><span class="comments" >我们就这样相遇了,</span><br />
+				<span class="space"/><span class="comments">两颗遥望的孤星，也终有交汇的时刻，</span><br />
+				<span class="space"/><span class="comments">我听见我的心脏在震裂，当你撕裂在海边。</span><br />
+			<span class="space"/><span class="comments">海浪碎成了泡沫在沙滩上流淌，</span><br />
+			<span class="space"/><span class="comments">你的湿润的唇，是我夏日记不起的久远的梦，</span><br />
+				
+				<span class="space"/><span class="comments">离开的时候，夜仿佛被子一样盖着海。</span><br />
+				<span class="space"/><span class="comments">真是如梦一场。</span><br />
+				
+					<span class="space"/><span class="comments"></span><br />
+				<span class="space"/><span class="comments">我常偷偷看你夜里睡着的模样，</span><br />
+				<span class="space"/><span class="comments">被昏暗的光修饰的眼睑，</span><br />
+				<span class="space"/><span class="comments">和绛红的唇，</span><br />
+			
+				<span class="space"/><span class="comments">这是我深爱的人，双手紧紧握住，抓住生命之根的人，</span><br />
+			
+			<span class="space"/><span class="comments">我听见河流在体内流动，当你翻身抓住我，</span><br />
+				
+				
+			<span class="space"/><span class="comments">温热的身体，散着灵魂的香，</span><br />
+				
+				<span class="comments">你如深夜摇曳的花一般静谧。</span><br />
+				<span class="comments">我也睡着了，</span><br />
+				<span class="comments">雨滴拍打窗台，星星隐没远山。</span><br />
+			</div>
+			
+			
+			<div id="loveHeart">
+				<canvas id="garden"></canvas>
+				<div id="words">
+					<div id="messages">
+						<div id="ru">如，<br/>&nbsp;&nbsp;我们已经在一起</div>
+						<div id="elapseClock"></div>
+					</div>
+					<div id="loveu">
+						爱你的<br/>
+						<div class="signature">- 周</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+	
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/garden.js"></script>
+    <script type="text/javascript" src="js/functions.js"></script>
+    <script type="text/javascript" src="js/functions_dev.js" ></script>
+    <script type="text/javascript" src="js/garden_dev.js" ></script>
+	
+	<script type="text/javascript">
+		var offsetX = $("#loveHeart").width() / 2;
+		var offsetY = $("#loveHeart").height() / 2 - 55;
+		var together = new Date();
+		together.setFullYear(2019, 10, 7);
+		together.setHours(20);
+		together.setMinutes(0);
+		together.setSeconds(0);
+		together.setMilliseconds(0);
+		
+		
+		if (!document.createElement('canvas').getContext) {
+			var msg = document.createElement("div");
+			msg.id = "errorMsg";
+			msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+"; 
+			document.body.appendChild(msg);
+			$("#code").css("display", "none")
+			$("#copyright").css("position", "absolute");
+			$("#copyright").css("bottom", "10px");
+		    document.execCommand("stop");
+		} else {
+			setTimeout(function () {
+				startHeartAnimation();
+			}, 5000);
+
+			timeElapse(together);
+			setInterval(function () {
+				timeElapse(together);
+			}, 500);
+
+			adjustCodePosition();
+			$("#code").typewriter();
+		}
+	</script>
+</body>
+</html>
